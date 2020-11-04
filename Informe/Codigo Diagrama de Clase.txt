@@ -1,0 +1,21 @@
+[CJuego|Juego:Laberinto()|~Juego();void:jugar();void:Gamer over();void:your winer;void:time();void():vida;void:GeneCantPersonajes]
+
+[CLaberinto|Laberinto:PPrincipal();Laberinto:Aliados();Laberinto:Corrupts();Laberinto:Assassins()|~Laberinto()void:GeneAlatorio();void:fondo; Laberinto:Aliados();Assassins();Laberinto:CCorrupts();Laberinto:PPrincipal();void:Generar()]
+
+[CPPrincipal|PPrincipal:Aliados()|~PPrincipal();void:moverPP();void:moverAliados;void:recorrido();void:Aliados]
+
+[CAliados|~Aliados();void:moverAutomatic()void():AutoColor;void:Generar();void:AlidoImpostor();void:AldeanoImMatar()]
+
+[CCorrupts|Corrupts:Aliados()|~Corrupts();void:Negociar();bool:getDerrocar();void:Derrocar();void:moverAutomatic();void:buscar();void:CorromperAliado;void:velocidad()]
+
+[CAssassins|Assassins:Aliados()|~Assassins()void:mover();bool:getEliminar();void:Eliminar();void:moverAutomatic()void:buscar();void:CorromperAliado;void:velocidad()]
+
+[CJuego]++1-1...*>[CLaberinto]
+[CLaberinto]1-1...*>[CPPrincipal]
+[CLaberinto]1-1...*>[CAliados]
+[CLaberinto]1-1...*>[CCorrupts]
+[CLaberinto]1-1...*>[CAssassins]
+[CPPrincipal]++1-1...*>[CAliados]
+[CAliados]
+[CCorrupts]1-1...*>[CAliados]
+[CAssassins]1-1...*>[CAliados]
